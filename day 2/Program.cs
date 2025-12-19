@@ -3,7 +3,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Finance.Fin();
+        // Finance.Fin();
+        Fmsclass.Fms();
     }
 
 }
