@@ -18,16 +18,28 @@ class Patient
 
 class Doctor
 {
-    public string Name;
-    public string Specialization;
-    public static int TotalDoctor = 0;
+    public string Name{get; set;}
+    public string Specialization{get; set;}
+    public static int TotalDoctor;
+    public readonly string LicenseNumber;
 
-    public Doctor(string name, string spec)
+    static Doctor()
+    {
+        TotalDoctor = 0;
+    }
+
+    public Doctor(string name, string spec, string license)
     {
         Name = name;
         Specialization = spec;
+        LicenseNumber = license;
         TotalDoctor++;
     }
+}
+
+class Cardiolagist : Doctor{
+    public Cardiolagist(string name, string spec, string license) : base(name, spec, license){}
+    
 }
 
 class Appointment
