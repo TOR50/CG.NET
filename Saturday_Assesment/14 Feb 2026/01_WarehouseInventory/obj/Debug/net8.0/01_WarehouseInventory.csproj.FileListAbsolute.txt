@@ -1,0 +1,14 @@
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\bin\Debug\net8.0\01_WarehouseInventory.exe
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\bin\Debug\net8.0\01_WarehouseInventory.deps.json
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\bin\Debug\net8.0\01_WarehouseInventory.runtimeconfig.json
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\bin\Debug\net8.0\01_WarehouseInventory.dll
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\bin\Debug\net8.0\01_WarehouseInventory.pdb
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\obj\Debug\net8.0\01_WarehouseInventory.GeneratedMSBuildEditorConfig.editorconfig
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\obj\Debug\net8.0\01_WarehouseInventory.AssemblyInfoInputs.cache
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\obj\Debug\net8.0\01_WarehouseInventory.AssemblyInfo.cs
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\obj\Debug\net8.0\01_WarehouseInventory.csproj.CoreCompileInputs.cache
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\obj\Debug\net8.0\01_WarehouseInventory.dll
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\obj\Debug\net8.0\refint\01_WarehouseInventory.dll
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\obj\Debug\net8.0\01_WarehouseInventory.pdb
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\obj\Debug\net8.0\01_WarehouseInventory.genruntimeconfig.cache
+D:\Capgemini Training\AdvancedSortedDictionaryScenarios\01_WarehouseInventory\obj\Debug\net8.0\ref\01_WarehouseInventory.dll
