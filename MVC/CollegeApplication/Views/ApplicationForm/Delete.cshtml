@@ -1,0 +1,36 @@
+@model CollegeApplication.Models.ApplicationForm
+
+@{
+    ViewData["Title"] = "Delete Application";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card card-modern delete-card fade-in">
+                <div class="delete-icon">🗑️</div>
+                <h3 style="color: var(--danger);">Delete Application?</h3>
+                <p class="text-muted mb-4">This action cannot be undone.</p>
+
+                <div class="text-start p-3 rounded mb-4" style="background: #f8fafc;">
+                    <p class="mb-2"><strong>Name:</strong> @Model.FullName</p>
+                    <p class="mb-2"><strong>Email:</strong> @Model.Email</p>
+                    <p class="mb-2"><strong>Course:</strong> @Model.Course</p>
+                    <p class="mb-0"><strong>Application ID:</strong> #@Model.ApplicationId</p>
+                </div>
+
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="ApplicationId" />
+                    <div class="d-flex gap-2 justify-content-center">
+                        <button type="submit" class="btn btn-modern btn-danger-modern">
+                            🗑️ Yes, Delete
+                        </button>
+                        <a asp-action="Index" class="btn btn-modern btn-outline-modern">
+                            Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

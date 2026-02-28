@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container text-center position-relative">
+        <h1 class="fade-in">Welcome to LPU Admissions</h1>
+        <p class="fade-in">Your journey to a bright future starts here. Apply now for 2026 admissions.</p>
+        <div class="mt-4 fade-in">
+            <a asp-controller="ApplicationForm" asp-action="Create" class="btn btn-modern btn-lg" style="background:white;color:#4f46e5;">
+                ✨ Apply Now
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<div class="container">
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="card card-modern h-100">
+                <div class="card-body text-center">
+                    <div class="card-icon mx-auto">📝</div>
+                    <h5 class="card-title">Easy Application</h5>
+                    <p class="text-muted">Simple online form with real-time validation. Complete in minutes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-modern h-100">
+                <div class="card-body text-center">
+                    <div class="card-icon mx-auto">🎓</div>
+                    <h5 class="card-title">Multiple Courses</h5>
+                    <p class="text-muted">B.Tech, BBA, BCA, B.Com and more undergraduate programs.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-modern h-100">
+                <div class="card-body text-center">
+                    <div class="card-icon mx-auto">🪪</div>
+                    <h5 class="card-title">Instant ID Card</h5>
+                    <p class="text-muted">Get your virtual ID card immediately after successful application.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="text-center mb-5">
+        <h3 class="mb-4">Quick Actions</h3>
+        <a asp-controller="ApplicationForm" asp-action="Create" class="btn btn-modern btn-primary-modern me-2 mb-2">
+            ✨ New Application
+        </a>
+        <a asp-controller="ApplicationForm" asp-action="Index" class="btn btn-modern btn-outline-modern mb-2">
+            📋 View Applications
+        </a>
+    </div>
+</div>

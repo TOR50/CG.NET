@@ -1,0 +1,64 @@
+@model CollegeApplication.Models.ApplicationForm
+
+@{
+    ViewData["Title"] = "Student ID Card";
+    var initials = string.Join("", Model.FullName.Split(' ').Select(n => n.Length > 0 ? n[0].ToString().ToUpper() : ""));
+}
+
+<div class="container py-4">
+    <div class="success-container fade-in">
+        <div class="success-icon">✓</div>
+        <h2 style="color: var(--dark);">Application Successful!</h2>
+        <p class="text-muted mb-4">Your application has been submitted. Here's your virtual ID Card.</p>
+    </div>
+
+    <!-- ID Card -->
+    <div class="id-card fade-in mb-4">
+        <div class="id-card-header">
+            <h4>🎓 LPU Student ID Card</h4>
+            <p>Lovely Professional University</p>
+        </div>
+        <div class="id-card-body">
+            <div class="id-card-photo">@initials</div>
+            <div class="id-card-info">
+                <div class="id-card-row">
+                    <span class="id-card-label">Name</span>
+                    <span class="id-card-value">@Model.FullName</span>
+                </div>
+                <div class="id-card-row">
+                    <span class="id-card-label">Course</span>
+                    <span class="id-card-value">@Model.Course</span>
+                </div>
+                <div class="id-card-row">
+                    <span class="id-card-label">Email</span>
+                    <span class="id-card-value">@Model.Email</span>
+                </div>
+                <div class="id-card-row">
+                    <span class="id-card-label">Phone</span>
+                    <span class="id-card-value">@Model.PhoneNumber</span>
+                </div>
+                <div class="id-card-row">
+                    <span class="id-card-label">Date of Birth</span>
+                    <span class="id-card-value">@Model.DateOfBirth.ToString("dd MMM yyyy")</span>
+                </div>
+            </div>
+        </div>
+        <div class="id-card-footer">
+            <div class="id-card-id">LPU@Model.ApplicationDate.Year@Model.ApplicationId.ToString("D4")</div>
+            <small class="text-muted">Application ID: #@Model.ApplicationId</small>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="text-center fade-in">
+        <a asp-action="DownloadIDCard" asp-route-id="@Model.ApplicationId" class="btn btn-modern btn-primary-modern me-2 mb-2">
+            📥 Download PDF
+        </a>
+        <a asp-action="Details" asp-route-id="@Model.ApplicationId" class="btn btn-modern btn-outline-modern me-2 mb-2">
+            📋 View Details
+        </a>
+        <a asp-action="Index" class="btn btn-modern btn-outline-modern mb-2">
+            ← All Applications
+        </a>
+    </div>
+</div>
