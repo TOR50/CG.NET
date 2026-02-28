@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4 mb-4">Welcome to MVC Application</h1>
+        <p class="lead mb-5">Connected to AdoNet Database with ADO.NET</p>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Add Numbers</h5>
+                        <p class="card-text">Simple calculator to add two numbers</p>
+                        <a href="@Url.Action("AddNumbers", "Home")" class="btn btn-primary">Go to Calculator</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Students Database</h5>
+                        <p class="card-text">View students from SQL Server database</p>
+                        <a href="@Url.Action("Index", "Student")" class="btn btn-success">View Students</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

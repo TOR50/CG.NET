@@ -1,0 +1,50 @@
+@model List<mvc.Models.Student>
+
+@{
+    ViewData["Title"] = "Students Database";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="mb-4">Students from AdoNet Database</h2>
+
+            @if (Model != null && Model.Any())
+            {
+                <div class="alert alert-success">
+                    <strong>Connected to Database!</strong> Found @Model.Count student(s) in the database.
+                </div>
+
+                <table class="table table-striped table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            @* <th>ID</th> *@
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Square Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var student in Model)
+                        {
+                            <tr>
+                                @* <td>@student.Id</td> *@
+                                <td>@student.Name</td>
+                                <td>@student.Age</td>
+                                <td>@(student.Age* student.Age)</td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-warning">
+                    <strong>No Data Found!</strong> The StudentsMaster table is empty or connection failed.
+                </div>
+            }
+        </div>
+    </div>
+</div>

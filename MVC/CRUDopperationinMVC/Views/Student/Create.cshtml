@@ -1,0 +1,34 @@
+@model CREDopperation.Models.Student
+
+<h1>Create Student</h1>
+
+<div asp-validation-summary="ModelOnly" style="color: red;"></div>
+
+<form asp-action="Create">
+    <div>
+        <label>Name:</label><br />
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" style="color: red;"></span>
+    </div>
+    <br />
+    <div>
+        <label>Age:</label><br />
+        <input asp-for="Age" type="number" />
+        <span asp-validation-for="Age" style="color: red;"></span>
+    </div>
+    <br />
+    <div>
+        <label>Marks:</label><br />
+        <input asp-for="Marks" type="number" step="0.01" />
+        <span asp-validation-for="Marks" style="color: red;"></span>
+    </div>
+    <br />
+    <div>
+        <input type="submit" value="Create" />
+        <a asp-action="Index">Back</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

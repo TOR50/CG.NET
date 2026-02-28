@@ -1,0 +1,14 @@
+@model CREDopperation.Models.Student
+
+<h1>Details</h1>
+
+<div>
+    <p><strong>Name:</strong> @Model.Name</p>
+    <p><strong>Age:</strong> @Model.Age</p>
+    <p><strong>Marks:</strong> @Model.Marks</p>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back</a>
+</div>
