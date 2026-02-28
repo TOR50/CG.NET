@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 class Program
 {
-
     static void Main(string[] args)
     {
         string connectionString = "Server=ROY\\SQLEXPRESS;Database=AdoNet;Integrated Security=True;TrustServerCertificate=True;";
