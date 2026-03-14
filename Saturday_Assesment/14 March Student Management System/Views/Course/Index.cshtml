@@ -1,0 +1,33 @@
+@model IEnumerable<StudentManagementSys.Models.Course>
+
+<div class="d-flex justify-content-between my-3">
+    <h2>Courses</h2>
+    <a asp-action="Create" class="btn btn-primary">Add Course</a>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Course Name</th>
+            <th>Duration (Months)</th>
+            <th>Fees</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CourseName</td>
+                <td>@item.Duration</td>
+                <td>@item.Fees</td>
+                <td>@item.Department?.DepartmentName</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CourseId" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.CourseId" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

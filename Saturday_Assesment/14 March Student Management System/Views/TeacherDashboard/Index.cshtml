@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Teacher Dashboard";
+}
+
+<div class="container mt-4">
+    <h2>Teacher Dashboard</h2>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Departments</h5>
+                    <p class="card-text">Manage departments.</p>
+                    <a asp-controller="Department" asp-action="Index" class="btn btn-primary w-100">Go to Departments</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Courses</h5>
+                    <p class="card-text">Manage courses.</p>
+                    <a asp-controller="Course" asp-action="Index" class="btn btn-primary w-100">Go to Courses</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Students</h5>
+                    <p class="card-text">Manage student records.</p>
+                    <a asp-controller="Student" asp-action="Index" class="btn btn-primary w-100">Go to Students</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if(ViewBag.DeptStats != null)
+    {
+        <h4 class="mt-4">Students per Department</h4>
+        <ul class="list-group mt-2">
+            @foreach(var stat in ViewBag.DeptStats)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @stat.DepartmentName
+                    <span class="badge bg-primary rounded-pill">@stat.StudentCount</span>
+                </li>
+            }
+        </ul>
+    }
+</div>

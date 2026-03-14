@@ -1,0 +1,51 @@
+@model IEnumerable<StudentManagementSys.Models.Student>
+
+<div class="d-flex justify-content-between my-3">
+    <h2>Students</h2>
+    <a asp-action="Create" class="btn btn-primary">Add Student</a>
+</div>
+
+<form asp-action="Index" method="get" class="mb-4">
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <input type="text" name="searchString" class="form-control" placeholder="Search by Name" />
+        </div>
+        <div class="col-auto">
+            <select name="deptId" class="form-control" asp-items="ViewBag.Departments">
+                <option value="">All Departments</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-secondary">Search</button>
+        </div>
+    </div>
+</form>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Department</th>
+            <th>Course</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StudentName</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.Department?.DepartmentName</td>
+                <td>@item.Course?.CourseName</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.StudentId" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.StudentId" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,63 @@
+@model StudentManagementSys.ViewModels.StudentProfileViewModel
+@{
+    ViewData["Title"] = "Student Profile";
+}
+
+<div class="container mt-4">
+    <h2>My Profile</h2>
+    <div class="row mt-4">
+        <!-- Personal Info Form -->
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">Personal Information</div>
+                <div class="card-body">
+                    <form asp-action="Profile" method="post">
+                        <input type="hidden" asp-for="StudentId" />
+                        
+                        <div class="form-group mb-3">
+                            <label>Name</label>
+                            <input class="form-control" type="text" asp-for="Name" readonly />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Email</label>
+                            <input class="form-control" type="email" asp-for="Email" readonly />
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="PhoneNumber">Phone Number</label>
+                            <input class="form-control" asp-for="PhoneNumber" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="Address">Address</label>
+                            <input class="form-control" asp-for="Address" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <!-- Readonly course/dept info for Postbacks-->
+                        <input type="hidden" asp-for="DepartmentName" />
+                        <input type="hidden" asp-for="CourseName" />
+                        <input type="hidden" asp-for="Duration" />
+                        <input type="hidden" asp-for="Fees" />
+
+                        <button type="submit" class="btn btn-primary w-100">Update Profile</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Details Display -->
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">Course Details</div>
+                <div class="card-body">
+                    <p><strong>Department:</strong> @Model.DepartmentName</p>
+                    <p><strong>Course Name:</strong> @Model.CourseName</p>
+                    <p><strong>Duration (Months):</strong> @Model.Duration</p>
+                    <p><strong>Fees:</strong> @Model.Fees</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
