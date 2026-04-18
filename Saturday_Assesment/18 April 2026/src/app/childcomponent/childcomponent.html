@@ -1,0 +1,12 @@
+<div>
+  <p>Selected country: {{ country?.name || 'None' }}</p>
+  <label>
+    State
+    <select [disabled]="states.length === 0" (change)="onStateChange($any($event.target).value)">
+      <option *ngFor="let state of states" [value]="state">
+        {{ state }}
+      </option>
+    </select>
+  </label>
+  <p *ngIf="selectedState">Selected state: {{ selectedState }}</p>
+</div>

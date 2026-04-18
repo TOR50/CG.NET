@@ -1,0 +1,45 @@
+<!-- 🔥 1. *ngIf -->
+<h2>*ngIf Example</h2>
+<p *ngIf="isLoggedIn; else loggedOut">
+  Welcome back, user!
+</p>
+
+<ng-template #loggedOut>
+  <p>Please login</p>
+</ng-template>
+
+<button (click)="toggleLogin()">Toggle Login</button>
+
+<hr>
+
+<!-- 🔥 2. *ngFor -->
+<h2>*ngFor Example</h2>
+<ul>
+  <li *ngFor="let user of users; let i = index">
+    {{i + 1}}. {{user}}
+  </li>
+</ul>
+
+<hr>
+
+<!-- 🔥 3. *ngSwitch -->
+<h2>*ngSwitch Example</h2>
+<div [ngSwitch]="role">
+
+  <p *ngSwitchCase="'admin'">Admin Dashboard</p>
+  <p *ngSwitchCase="'user'">User Dashboard</p>
+  <p *ngSwitchDefault>Guest View</p>
+
+</div>
+
+<button (click)="changeRole('admin')">Admin</button>
+<button (click)="changeRole('user')">User</button>
+<button (click)="changeRole('guest')">Guest</button>
+
+<hr>
+
+<!-- 🔥 4. Parent and Child Component Example -->
+<h2>Parent-Child Component Example (Country & State Selection)</h2>
+<main> 
+  <app-parentcomponent></app-parentcomponent>
+</main>
